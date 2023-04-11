@@ -524,7 +524,7 @@ namespace MyShogi.View.Win2D
             var questionNumText = questionNum.ToString("000");
             try
             {
-                ReadKifuFile(questionNumText + ".usi");
+                ReadKifuFile(questionNumText + ".kif");
             }
             catch
             {

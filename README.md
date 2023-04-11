@@ -8,7 +8,7 @@
 1. 画像は含まれていないので https://github.com/jnory/MyShogiImages を参照して準備
 
 ## 手順の準備
-(現状では)実行バイナリと同じディレクトリに 001.usi, 002.usi というファイルを用意する。
+(現状では)実行バイナリと同じディレクトリに 001.kif, 002.kif というファイルを用意する。
 
 # About this project
 
