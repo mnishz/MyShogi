@@ -94,7 +94,7 @@ namespace MyShogi.App
 
             KifuWindowPrevNextKey = 1;
             KifuWindowFirstLastKey = 2;
-            KifuWindowNextSpecialKey = 1;
+            KifuWindowCounterMoveSpecialKey = 1;
 
             ConsiderationWindowPrevNextKey = 1;
             ConsiderationWindowHeadTailKey = 2;
@@ -773,16 +773,16 @@ namespace MyShogi.App
         /// <summary>
         /// 棋譜ウインドウでのキー操作その2
         ///
-        /// 次の1手に移動する特殊キー
+        /// 応手をランダムで選ぶ特殊キー
         /// 0 : なし
         /// 1 : スペースキー : デフォルト
         /// 2 : Enterキー
         /// </summary>
         [DataMember]
-        public int KifuWindowNextSpecialKey
+        public int KifuWindowCounterMoveSpecialKey
         {
-            get { return GetValue<int>("KifuWindowNextSpecialKey"); }
-            set { SetValue<int>("KifuWindowNextSpecialKey", value); }
+            get { return GetValue<int>("KifuWindowCounterMoveSpecialKey"); }
+            set { SetValue<int>("KifuWindowCounterMoveSpecialKey", value); }
         }
 
         /// <summary>

@@ -39,19 +39,19 @@ namespace MyShogi.View.Win2D
 
             }
 
-            // 次の1手に移動する特殊キー
+            // 応手をランダムで選ぶ特殊キー
             // 使わないキー、殺しておかないとListViewが反応しかねない。
-            switch (config.KifuWindowNextSpecialKey)
+            switch (config.KifuWindowCounterMoveSpecialKey)
             {
                 case 0: // なし
                     break;
 
                 case 1: // スペースキー (EnterとSpaceキーは同時押しは使わないので単独で判定する)
-                    addEvent( e => { if (/*e.Modifiers == Keys.None &&*/ e.KeyCode == Keys.Space) { toolStripButton10.PerformClick(); e.Handled = true; } });
+                    addEvent( e => { if (/*e.Modifiers == Keys.None &&*/ e.KeyCode == Keys.Space) { toolStripButton16.PerformClick(); e.Handled = true; } });
                     break;
 
                 case 2: // Enterキー
-                    addEvent( e => { if (/*e.Modifiers == Keys.None &&*/ e.KeyCode == Keys.Enter) { toolStripButton10.PerformClick(); e.Handled = true; } });
+                    addEvent( e => { if (/*e.Modifiers == Keys.None &&*/ e.KeyCode == Keys.Enter) { toolStripButton16.PerformClick(); e.Handled = true; } });
                     break;
             }
 

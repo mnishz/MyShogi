@@ -167,7 +167,7 @@ namespace MyShogi.App
             // 操作設定
 
             Config.AddPropertyChangedHandler("KifuWindowPrevNextKey", mainDialog.UpdateToolStripShortcut);
-            Config.AddPropertyChangedHandler("KifuWindowNextSpecialKey", mainDialog.UpdateToolStripShortcut);
+            Config.AddPropertyChangedHandler("KifuWindowCounterMoveSpecialKey", mainDialog.UpdateToolStripShortcut);
             Config.AddPropertyChangedHandler("KifuWindowFirstLastKey", mainDialog.UpdateToolStripShortcut);
             Config.AddPropertyChangedHandler("ConsiderationWindowPrevNextKey", mainDialog.UpdateToolStripShortcut);
             

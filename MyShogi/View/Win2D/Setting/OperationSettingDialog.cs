@@ -35,7 +35,7 @@ namespace MyShogi.View.Win2D.Setting
             // -- 「棋譜」のタブ
 
             richSelector2.Bind(config, "KifuWindowPrevNextKey");
-            richSelector3.Bind(config, "KifuWindowNextSpecialKey");
+            richSelector3.Bind(config, "KifuWindowCounterMoveSpecialKey");
             richSelector4.Bind(config, "KifuWindowFirstLastKey");
 
             // -- 「検討」のタブ
