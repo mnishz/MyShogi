@@ -743,9 +743,14 @@ namespace MyShogi.Model.Shogi.Kifu
             int n = prev.moves.FindIndex((x) => x.nextNode == currentNode);
             int n2 = (n + 1) % prev.moves.Count; /* 次分岐 */
 
+            UpdateBranch(prev, n2);
+        }
+
+        private void UpdateBranch(KifuNode prev, int branchNumber)
+        {
             PropertyChangedEventEnable = false;
 
-            // このnodeに来て、n2を選択してKifuListを更新する。
+            // このnodeに来て、branchNumberを選択してKifuListを更新する。
             UndoMove();
 
             // 現在行以降のKifuList、KifuMovesを削除
@@ -754,7 +759,7 @@ namespace MyShogi.Model.Shogi.Kifu
             var e = EnableKifuList;
             EnableKifuList = true;
 
-            DoMove(prev.moves[n2]);
+            DoMove(prev.moves[branchNumber]);
 
             int ply = 0;
             for (; currentNode.moves.Count != 0 ; ++ply)
@@ -774,6 +779,28 @@ namespace MyShogi.Model.Shogi.Kifu
             RaisePropertyChanged("Position", position.Clone());
 
             EnableKifuList = e; // 元の値
+        }
+
+        /// <summary>
+        /// 次の分岐をランダムに選ぶ
+        /// </summary>
+        public void CounterMove()
+        {
+            // 1つ前のnodeがなければNG
+            var prev = currentNode.prevNode;
+            if (prev == null)
+                return;
+
+            // 分岐がなければNG
+            if (prev.moves.Count <= 1)
+                return;
+
+            // 分岐があるので次の分岐を選択して、棋譜ウィンドウを更新する。
+            int n = prev.moves.FindIndex((x) => x.nextNode == currentNode);
+            var r = new Random();
+            var n2 = r.Next(prev.moves.Count);
+
+            UpdateBranch(prev, n2);
         }
 
         /// <summary>

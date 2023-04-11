@@ -52,6 +52,7 @@
             this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +96,8 @@
             this.toolStripSeparator4,
             this.toolStripButton14,
             this.toolStripTextBox,
-            this.toolStripButton15});
+            this.toolStripButton15,
+            this.toolStripButton16});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.ShowItemToolTips = false;
@@ -274,6 +276,16 @@
             this.toolStripButton15.Text = "次";
             this.toolStripButton15.ToolTipText = "次の問題";
             this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
+            //
+            // toolStripButton16
+            //
+            this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton16.Name = "toolStripButton16";
+            this.toolStripButton16.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton16.Text = "応";
+            this.toolStripButton16.ToolTipText = "棋譜の中から適当な応手を選んで指す";
+            this.toolStripButton16.Click += new System.EventHandler(this.toolStripButton16_Click);
             // 
             // MainDialog
             // 
@@ -326,5 +338,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton14;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButton15;
+        private System.Windows.Forms.ToolStripButton toolStripButton16;
     }
 }

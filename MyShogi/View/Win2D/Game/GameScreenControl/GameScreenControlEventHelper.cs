@@ -74,6 +74,7 @@ namespace MyShogi.View.Win2D
 
             kifuControl1.ViewModel.AddPropertyChangedHandler("MainBranchButtonClicked" , gameServer.MainBranchButtonCommand);
             kifuControl1.ViewModel.AddPropertyChangedHandler("NextBranchButtonClicked" , gameServer.NextBranchButtonCommand);
+            kifuControl1.ViewModel.AddPropertyChangedHandler("CounterMoveButtonClicked" , gameServer.CounterMoveButtonCommand);
             kifuControl1.ViewModel.AddPropertyChangedHandler("EraseBranchButtonClicked", gameServer.EraseBranchButtonCommand);
             kifuControl1.ViewModel.AddPropertyChangedHandler("RemoveLastMoveClicked"   , gameServer.RemoveLastMoveButtonCommand);
 
@@ -107,6 +108,7 @@ namespace MyShogi.View.Win2D
 
             kifuControl1.ViewModel.RemovePropertyChangedHandler("MainBranchButtonClicked", gameServer.MainBranchButtonCommand);
             kifuControl1.ViewModel.RemovePropertyChangedHandler("NextBranchButtonClicked", gameServer.NextBranchButtonCommand);
+            kifuControl1.ViewModel.RemovePropertyChangedHandler("CounterMoveButtonClicked", gameServer.CounterMoveButtonCommand);
             kifuControl1.ViewModel.RemovePropertyChangedHandler("EraseBranchButtonClicked", gameServer.EraseBranchButtonCommand);
         }
 

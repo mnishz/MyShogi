@@ -502,6 +502,23 @@ namespace MyShogi.Model.Shogi.LocalServer
         }
 
         /// <summary>
+        /// 棋譜の分岐からランダムに選ぶ
+        /// </summary>
+        public void CounterMoveButtonCommand(PropertyChangedEventArgs args)
+        {
+            AddCommand(
+            () =>
+            {
+                // 対局中は使用不可
+                if (GameMode.IsConsideration())
+                {
+                    kifuManager.Tree.CounterMove();
+                    UpdateKifuSelectedIndex();
+                }
+            });
+        }
+
+        /// <summary>
         /// 棋譜の分岐削除ボタン
         /// </summary>
         public void EraseBranchButtonCommand(PropertyChangedEventArgs args)

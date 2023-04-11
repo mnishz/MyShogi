@@ -535,6 +535,12 @@ namespace MyShogi.View.Win2D
             this.toolStripTextBox.Text = questionNumText;
         }
 
+        private void toolStripButton16_Click(object sender, System.EventArgs e)
+        {
+            kifuControl.ForwardKifuListIndex();
+            kifuControl.ViewModel.RaisePropertyChanged("CounterMoveButtonClicked");
+        }
+
         /// <summary>
         /// Drag & Dropのためのハンドラ
         /// </summary>
