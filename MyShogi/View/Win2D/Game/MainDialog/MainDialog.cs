@@ -154,6 +154,7 @@ namespace MyShogi.View.Win2D
             catch
             {
                 TheApp.app.MessageShow($"ファイル読み込みエラー。ファイル {path} の読み込みに失敗しました。", MessageShowType.Error);
+                throw;
             }
         }
 

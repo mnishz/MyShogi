@@ -512,6 +512,29 @@ namespace MyShogi.View.Win2D
             kifuControl.ViewModel.KifuListSelectedIndex = kifuControl.ViewModel.KifuListCount - 1;
         }
 
+        private void toolStripButton14_Click(object sender, System.EventArgs e)
+        {
+            // TODO
+            TheApp.app.MessageShow("未実装", MessageShowType.Error);
+        }
+
+        private void toolStripButton15_Click(object sender, System.EventArgs e)
+        {
+            var questionNum = int.Parse(this.toolStripTextBox.Text) + 1;
+            var questionNumText = questionNum.ToString("000");
+            try
+            {
+                ReadKifuFile(questionNumText + ".usi");
+            }
+            catch
+            {
+                return;
+            }
+            // TODO: 戻らない。。。 -> KifuReadCommand() で MovesWhenKifuOpen の値を無視して対応
+            // gameScreenControl1.gameServer.UpdateKifuSelectedIndex(0);
+            this.toolStripTextBox.Text = questionNumText;
+        }
+
         /// <summary>
         /// Drag & Dropのためのハンドラ
         /// </summary>

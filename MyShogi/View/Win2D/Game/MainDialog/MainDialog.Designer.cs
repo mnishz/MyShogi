@@ -48,6 +48,10 @@
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +91,11 @@
             this.toolStripButton12,
             this.toolStripButton9,
             this.toolStripButton10,
-            this.toolStripButton13});
+            this.toolStripButton13,
+            this.toolStripSeparator4,
+            this.toolStripButton14,
+            this.toolStripTextBox,
+            this.toolStripButton15});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.ShowItemToolTips = false;
@@ -233,6 +241,39 @@
             this.toolStripButton13.Text = "▶";
             this.toolStripButton13.ToolTipText = "末尾の局面に進めます。(検討時)";
             this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
+            //
+            // toolStripSeparator4
+            //
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            //
+            // toolStripButton14
+            //
+            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton14.Name = "toolStripButton14";
+            this.toolStripButton14.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton14.Text = "前";
+            this.toolStripButton14.ToolTipText = "前の問題";
+            this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton14_Click);
+            //
+            // toolStripTextBox
+            //
+            this.toolStripTextBox.Name = "toolStripTextBox";
+            this.toolStripTextBox.Text = "000";
+            this.toolStripTextBox.ToolTipText = "現在の問題番号";
+            this.toolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            //
+            // toolStripButton15
+            //
+            this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton15.Name = "toolStripButton15";
+            this.toolStripButton15.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton15.Text = "次";
+            this.toolStripButton15.ToolTipText = "次の問題";
+            this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
             // 
             // MainDialog
             // 
@@ -281,5 +322,9 @@
         private MyShogi.View.Win2D.GameScreenControl gameScreenControl1;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toolStripButton14;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox;
+        private System.Windows.Forms.ToolStripButton toolStripButton15;
     }
 }

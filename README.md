@@ -1,4 +1,15 @@
-﻿
+﻿# 追加コメント for this fork repository
+
+詰将棋や特定の手順を頭に叩き込むために、何度も反復練習するためのソフト。
+
+## How to build on Windows
+1. Visual Studio Community を install
+1. MyShogi\MyShogi に移動して、"Visual Studio で開く" を選択
+1. 画像は含まれていないので https://github.com/jnory/MyShogiImages を参照して準備
+
+## 手順の準備
+(現状では)実行バイナリと同じディレクトリに 001.usi, 002.usi というファイルを用意する。
+
 # About this project
 
 MyShogi is an open source GUI for computer Shogi engine.

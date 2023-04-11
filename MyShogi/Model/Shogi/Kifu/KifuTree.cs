@@ -998,6 +998,11 @@ namespace MyShogi.Model.Shogi.Kifu
                 DoMove(m);
                 return true;
             }
+            else
+            {
+                // 指し手が棋譜に存在しない (間違った手を指した)
+                return false;
+            }
 
             PropertyChangedEventEnable = false;
 

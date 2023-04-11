@@ -118,7 +118,15 @@ namespace MyShogi.Model.Shogi.LocalServer
 
                         var misc = config.GameSetting.MiscSettings;
                         if (!kifuManager.Tree.DoMoveUI(m, misc))
+                        {
+                            TheApp.app.MessageShow("指し手が間違っています。", MessageShowType.Error);
                             return;
+                        }
+
+                        if (kifuManager.Tree.gamePly == kifuManager.Tree.KifuList.Count)
+                        {
+                            TheApp.app.MessageShow("正解です。", MessageShowType.Information);
+                        }
 
                         // DoMoveに成功したので駒音を再生する。
                         PlayPieceSound(GameMode, m.To(), stm);
@@ -311,7 +319,7 @@ namespace MyShogi.Model.Shogi.LocalServer
                             // 通常の棋譜のオープンであるなら、
                             // config.MovesWhenKifuOpenの値を反映させる。
                             // これが0なら開始局面、1なら終局図
-                            switch (TheApp.app.Config.MovesWhenKifuOpen)
+                            switch (0)  // toolStripButton15_Click 参照
                             {
                                 case 0:
                                     UpdateKifuSelectedIndex(0);
