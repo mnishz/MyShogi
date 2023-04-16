@@ -23,10 +23,11 @@ namespace MyShogi.View.Win2D
         /// 初期化する。
         /// このとき、イベントハンドラを設定する。
         /// </summary>
-        public void Init()
+        public void Init(TimerEnabler timerEnabler = null)
         {
             SetEventHandlers();
             handler_set = true;
+            counterMoveTimerEnabler = timerEnabler;
         }
 
         /// <summary>
@@ -1117,6 +1118,7 @@ namespace MyShogi.View.Win2D
             StateReset();
 
             gameServer.DoMoveCommand(m ,
+                counterMoveTimerEnabler,
                 () => surpressDraw = false // 終了ハンドラで描画の抑制を解除する。
                 );
         }
@@ -1352,5 +1354,6 @@ namespace MyShogi.View.Win2D
             return SquareHand.NB;
         }
 
+        private TimerEnabler counterMoveTimerEnabler;
     }
 }

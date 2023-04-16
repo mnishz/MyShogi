@@ -62,6 +62,8 @@ namespace MyShogi.View.Win2D
 
         #endregion
 
+        private System.Timers.Timer counterMoveTimer;
+
         /// <summary>
         /// LocalGameServerを渡して、このウィンドウに貼り付けているGameScreenControlを初期化してやる。
         /// </summary>
@@ -76,7 +78,7 @@ namespace MyShogi.View.Win2D
                 UpdateMenuItems = UpdateMenuItems,
             };
             gameScreenControl1.Setting = setting;
-            gameScreenControl1.Init();
+            gameScreenControl1.Init(EnableCounterMoveTimer);
 
             // エンジンの読み筋などを、検討ダイアログにリダイレクトする。
             gameScreenControl1.ThinkReportChanged = ThinkReportChanged;
@@ -93,6 +95,15 @@ namespace MyShogi.View.Win2D
             // ToolStripのShortcutを設定する。
             // これは、engineConsiderationMainControlの初期化が終わっている必要がある。
             UpdateToolStripShortcut();
+
+            counterMoveTimer = new System.Timers.Timer(500);
+            counterMoveTimer.Elapsed += DoCounterMove;
+            counterMoveTimer.AutoReset = false;
+        }
+
+        private void EnableCounterMoveTimer()
+        {
+            counterMoveTimer.Enabled = true;
         }
 
         /// <summary>

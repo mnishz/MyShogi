@@ -541,6 +541,12 @@ namespace MyShogi.View.Win2D
             kifuControl.ViewModel.RaisePropertyChanged("CounterMoveButtonClicked");
         }
 
+        private void DoCounterMove(System.Object source, System.Timers.ElapsedEventArgs e)
+        {
+            kifuControl.ForwardKifuListIndex();
+            kifuControl.ViewModel.RaisePropertyChanged("CounterMoveButtonClicked");
+        }
+
         /// <summary>
         /// Drag & Dropのためのハンドラ
         /// </summary>
