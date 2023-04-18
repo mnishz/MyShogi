@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using MyShogi.App;
 using MyShogi.Model.Common.ObjectModel;
@@ -537,6 +539,10 @@ namespace MyShogi.View.Win2D
             }
 
             kifuFiles = System.IO.Directory.GetFiles(kifuFolder, "*");
+            if (shuffleCheckBox.Checked)
+            {
+                kifuFiles = kifuFiles.OrderBy(i => Guid.NewGuid()).ToArray();
+            }
             kifuFileIndex = (kifuFiles.Length != 0) ? 0 : -1;
             return true;
         }

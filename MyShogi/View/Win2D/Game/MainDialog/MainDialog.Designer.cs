@@ -54,6 +54,7 @@
             this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
+            this.shuffleCheckBox = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,6 +101,7 @@
             this.toolStripTextBox,
             this.toolStripButton15,
             this.toolStripButton16});
+            this.toolStrip1.Items.Add(new System.Windows.Forms.ToolStripControlHost(this.shuffleCheckBox));
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.ShowItemToolTips = false;
@@ -298,6 +300,10 @@
             this.toolStripButton16.Text = "応";
             this.toolStripButton16.ToolTipText = "棋譜の中から適当な応手を選んで指す";
             this.toolStripButton16.Click += new System.EventHandler(this.toolStripButton16_Click);
+            //
+            // shuffleCheckBox
+            //
+            this.shuffleCheckBox.Text = "シャッフル";
             // 
             // MainDialog
             // 
@@ -352,5 +358,6 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButton15;
         private System.Windows.Forms.ToolStripButton toolStripButton16;
+        private System.Windows.Forms.CheckBox shuffleCheckBox;
     }
 }
