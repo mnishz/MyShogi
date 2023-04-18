@@ -20,6 +20,9 @@ namespace MyShogi.Model.Resource.Sounds
         // 王手の時と駒を捕獲した時に衝撃音を鳴らす場合、このサウンド
         KOMA_C1,
 
+        // 効果音
+        SE_SEIKAI,
+
         // -- 以下、読み上げの音声
 
         // SQ_11 ～ SQ_99
@@ -246,6 +249,8 @@ namespace MyShogi.Model.Resource.Sounds
                 case SoundEnum.Sennichite:return "sennichite.wav";
                 case SoundEnum.Tsumi:     return "tsumi.wav";
                 case SoundEnum.Jikangire: return "jikangire.wav";
+
+                case SoundEnum.SE_SEIKAI: return "seikai.wav";
 
                 default: return "";
             }

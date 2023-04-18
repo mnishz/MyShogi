@@ -72,6 +72,10 @@ namespace MyShogi.Model.Resource.Sounds
             if (!dic.ContainsKey(e))
             {
                 var subFolder = e.IsKoma() ? KomaSoundPath : ReadOutSoundPath;
+                if (e == SoundEnum.SE_SEIKAI)
+                {
+                    subFolder = "sound_effect";
+                }
                 var filename = Path.Combine(Path.Combine(SoundPath, subFolder), SoundHelper.FileNameOf(e));
                 var s = new SoundLoader();
                 s.ReadFile(filename);

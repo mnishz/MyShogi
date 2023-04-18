@@ -128,7 +128,7 @@ namespace MyShogi.Model.Shogi.LocalServer
 
                         if (kifuManager.Tree.gamePly == kifuManager.Tree.KifuList.Count)
                         {
-                            TheApp.app.MessageShow("正解です。", MessageShowType.Information);
+                            TheApp.app.SoundManager.Play(MyShogi.Model.Resource.Sounds.SoundEnum.SE_SEIKAI);
                         }
 
                         // DoMoveに成功したので駒音を再生する。

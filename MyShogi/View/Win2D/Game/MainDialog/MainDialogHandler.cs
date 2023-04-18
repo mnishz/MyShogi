@@ -543,8 +543,11 @@ namespace MyShogi.View.Win2D
 
         private void DoCounterMove(System.Object source, System.Timers.ElapsedEventArgs e)
         {
-            kifuControl.ForwardKifuListIndex();
-            kifuControl.ViewModel.RaisePropertyChanged("CounterMoveButtonClicked");
+            if (kifuControl.ViewModel.KifuListSelectedIndex < kifuControl.ViewModel.KifuListCount - 1)
+            {
+                kifuControl.ForwardKifuListIndex();
+                kifuControl.ViewModel.RaisePropertyChanged("CounterMoveButtonClicked");
+            }
         }
 
         /// <summary>
