@@ -49,6 +49,7 @@
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
@@ -94,6 +95,7 @@
             this.toolStripButton10,
             this.toolStripButton13,
             this.toolStripSeparator4,
+            this.toolStripButton17,
             this.toolStripButton14,
             this.toolStripTextBox,
             this.toolStripButton15,
@@ -249,6 +251,16 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             //
+            // toolStripButton17
+            //
+            this.toolStripButton17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton17.Name = "toolStripButton17";
+            this.toolStripButton17.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton17.Text = "選";
+            this.toolStripButton17.ToolTipText = "棋譜ファイルのフォルダを選ぶ";
+            this.toolStripButton17.Click += new System.EventHandler(this.toolStripButton17_Click);
+            //
             // toolStripButton14
             //
             this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -256,13 +268,13 @@
             this.toolStripButton14.Name = "toolStripButton14";
             this.toolStripButton14.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton14.Text = "前";
-            this.toolStripButton14.ToolTipText = "前の問題";
+            this.toolStripButton14.ToolTipText = "前の問題に戻る";
             this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton14_Click);
             //
             // toolStripTextBox
             //
             this.toolStripTextBox.Name = "toolStripTextBox";
-            this.toolStripTextBox.Text = "000";
+            this.toolStripTextBox.Text = "invalid";
             this.toolStripTextBox.ToolTipText = "現在の問題番号";
             this.toolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.toolStripTextBox.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -274,7 +286,7 @@
             this.toolStripButton15.Name = "toolStripButton15";
             this.toolStripButton15.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton15.Text = "次";
-            this.toolStripButton15.ToolTipText = "次の問題";
+            this.toolStripButton15.ToolTipText = "次の問題に進む";
             this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
             //
             // toolStripButton16
@@ -335,6 +347,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toolStripButton17;
         private System.Windows.Forms.ToolStripButton toolStripButton14;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButton15;

@@ -512,6 +512,40 @@ namespace MyShogi.View.Win2D
             kifuControl.ViewModel.KifuListSelectedIndex = kifuControl.ViewModel.KifuListCount - 1;
         }
 
+        private string[] kifuFiles;
+        private int kifuFileIndex = -1;
+        private string kifuFolder = "";
+
+        private bool SelectKifuFolder()
+        {
+            using (var fd = new OpenFileDialog())
+            {
+                fd.FileName = "SelectFolder";
+                fd.Filter = "Folder|.";
+                fd.CheckFileExists = false;
+                fd.InitialDirectory = ".";
+                fd.Title = "棋譜ファイルが存在するフォルダを選択してください";
+
+                if (fd.ShowDialog() == DialogResult.OK)
+                {
+                    kifuFolder = System.IO.Path.GetDirectoryName(fd.FileName);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            kifuFiles = System.IO.Directory.GetFiles(kifuFolder, "*");
+            kifuFileIndex = (kifuFiles.Length != 0) ? 0 : -1;
+            return true;
+        }
+
+        private void toolStripButton17_Click(object sender, System.EventArgs e)
+        {
+            SelectKifuFolder();
+        }
+
         private void toolStripButton14_Click(object sender, System.EventArgs e)
         {
             // TODO
@@ -520,19 +554,30 @@ namespace MyShogi.View.Win2D
 
         private void toolStripButton15_Click(object sender, System.EventArgs e)
         {
-            var questionNum = int.Parse(this.toolStripTextBox.Text) + 1;
-            var questionNumText = questionNum.ToString("000");
+            if ((kifuFiles == null) || (kifuFiles.Length == 0))
+            {
+                if (!SelectKifuFolder())
+                {
+                    return;
+                }
+            }
+            else
+            {
+                ++kifuFileIndex;
+            }
+
             try
             {
-                ReadKifuFile(questionNumText + ".kif");
+                var fileName = kifuFiles[kifuFileIndex];
+                ReadKifuFile(fileName);
+                // TODO: 戻らない。。。 -> KifuReadCommand() で MovesWhenKifuOpen の値を無視して対応
+                // gameScreenControl1.gameServer.UpdateKifuSelectedIndex(0);
+                this.toolStripTextBox.Text = System.IO.Path.GetFileName(fileName);
             }
             catch
             {
                 return;
             }
-            // TODO: 戻らない。。。 -> KifuReadCommand() で MovesWhenKifuOpen の値を無視して対応
-            // gameScreenControl1.gameServer.UpdateKifuSelectedIndex(0);
-            this.toolStripTextBox.Text = questionNumText;
         }
 
         private void toolStripButton16_Click(object sender, System.EventArgs e)
