@@ -269,7 +269,7 @@
             this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton14.Name = "toolStripButton14";
             this.toolStripButton14.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton14.Text = "前";
+            this.toolStripButton14.Text = "<";
             this.toolStripButton14.ToolTipText = "前の問題に戻る";
             this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton14_Click);
             //
@@ -287,7 +287,7 @@
             this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton15.Name = "toolStripButton15";
             this.toolStripButton15.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton15.Text = "次";
+            this.toolStripButton15.Text = ">";
             this.toolStripButton15.ToolTipText = "次の問題に進む";
             this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
             //

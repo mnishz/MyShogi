@@ -551,13 +551,7 @@ namespace MyShogi.View.Win2D
             SelectKifuFileAndFolder();
         }
 
-        private void toolStripButton14_Click(object sender, System.EventArgs e)
-        {
-            // TODO
-            TheApp.app.MessageShow("未実装", MessageShowType.Error);
-        }
-
-        private void toolStripButton15_Click(object sender, System.EventArgs e)
+        private void GoToPrevNextProblem(bool isNext)
         {
             if ((kifuFiles == null) || (kifuFiles.Length == 0))
             {
@@ -566,7 +560,9 @@ namespace MyShogi.View.Win2D
             }
             else
             {
-                ++kifuFileIndex;
+                kifuFileIndex = (isNext) ? kifuFileIndex + 1 : kifuFileIndex - 1;
+                if (kifuFileIndex < 0) kifuFileIndex = 0;
+                if (kifuFileIndex >= kifuFiles.Length) kifuFileIndex = kifuFiles.Length - 1;
             }
 
             try
@@ -581,6 +577,16 @@ namespace MyShogi.View.Win2D
             {
                 return;
             }
+        }
+
+        private void toolStripButton14_Click(object sender, System.EventArgs e)
+        {
+            GoToPrevNextProblem(false);
+        }
+
+        private void toolStripButton15_Click(object sender, System.EventArgs e)
+        {
+            GoToPrevNextProblem(true);
         }
 
         private void toolStripButton16_Click(object sender, System.EventArgs e)
