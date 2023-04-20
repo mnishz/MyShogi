@@ -50,6 +50,7 @@
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
@@ -97,6 +98,7 @@
             this.toolStripButton13,
             this.toolStripSeparator4,
             this.toolStripButton17,
+            this.toolStripButton18,
             this.toolStripButton14,
             this.toolStripTextBox,
             this.toolStripButton15,
@@ -260,8 +262,18 @@
             this.toolStripButton17.Name = "toolStripButton17";
             this.toolStripButton17.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton17.Text = "選";
-            this.toolStripButton17.ToolTipText = "棋譜ファイルのフォルダを選ぶ";
+            this.toolStripButton17.ToolTipText = "最初の棋譜ファイルを選ぶ";
             this.toolStripButton17.Click += new System.EventHandler(this.toolStripButton17_Click);
+            //
+            // toolStripButton18
+            //
+            this.toolStripButton18.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton18.Name = "toolStripButton18";
+            this.toolStripButton18.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton18.Text = "続";
+            this.toolStripButton18.ToolTipText = "前回の最後のファイルから続ける";
+            this.toolStripButton18.Click += new System.EventHandler(this.toolStripButton18_Click);
             //
             // toolStripButton14
             //
@@ -354,6 +366,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButton17;
+        private System.Windows.Forms.ToolStripButton toolStripButton18;
         private System.Windows.Forms.ToolStripButton toolStripButton14;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButton15;

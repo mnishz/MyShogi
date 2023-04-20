@@ -529,7 +529,12 @@ namespace MyShogi.View.Win2D
                 return;
             }
 
-            kifuFolder = System.IO.Path.GetDirectoryName(openedFile);
+            LoadFilesInTheSameFolder(openedFile);
+        }
+
+        private void LoadFilesInTheSameFolder(string file)
+        {
+            kifuFolder = System.IO.Path.GetDirectoryName(file);
             kifuFiles = System.IO.Directory.GetFiles(kifuFolder, "*");
 
             if (shuffleCheckBox.Checked)
@@ -537,18 +542,31 @@ namespace MyShogi.View.Win2D
                 kifuFiles = kifuFiles.OrderBy(i => Guid.NewGuid()).ToArray();
             }
 
-            var index = Array.FindIndex(kifuFiles, s => s.Equals(openedFile));
+            var index = Array.FindIndex(kifuFiles, s => s.Equals(file));
             if ((index >= 0) && (index < kifuFiles.Length))
             {
                 kifuFileIndex = index;
             }
 
-            this.toolStripTextBox.Text = System.IO.Path.GetFileName(openedFile);
+            this.toolStripTextBox.Text = System.IO.Path.GetFileName(file);
         }
 
         private void toolStripButton17_Click(object sender, System.EventArgs e)
         {
             SelectKifuFileAndFolder();
+        }
+
+        private void toolStripButton18_Click(object sender, System.EventArgs e)
+        {
+            var lastFile = TheApp.app.Config.MRUF.Files[0];
+
+            if (lastFile == null)
+            {
+                return;
+            }
+
+            ReadKifuFile(lastFile);
+            LoadFilesInTheSameFolder(lastFile);
         }
 
         private void GoToPrevNextProblem(bool isNext)
