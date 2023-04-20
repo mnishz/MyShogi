@@ -18,6 +18,32 @@ namespace MyShogi.View.Win2D
     /// </summary>
     public partial class MainDialog : Form
     {
+        public void OpenKifuFile()
+        {
+            using (var fd = new OpenFileDialog())
+            {
+                    // [ファイルの種類]に表示される選択肢を指定する
+                    // 指定しないとすべてのファイルが表示される
+                    fd.Filter = string.Join("|", new string[]
+                    {
+                "棋譜ファイル|*.kif;*.kifu;*.ki2;*.kif2;*.ki2u;*.kif2u;*.csa;*.psn;*.psn2;*.sfen;*.json;*.jkf;*.txt",
+                "KIF形式|*.kif;*.kifu",
+                "KIF2形式|*.ki2;*.kif2;*.ki2u;*.kif2u",
+                "CSA形式|*.csa",
+                "PSN形式|*.psn",
+                "PSN2形式|*.psn2",
+                "SFEN形式|*.sfen",
+                "すべてのファイル|*.*",
+                    });
+                fd.FilterIndex = 1;
+                fd.Title = "開く棋譜ファイルを選択してください";
+
+                    // ダイアログを表示する
+                    if (fd.ShowDialog() == DialogResult.OK)
+                    ReadKifuFile(fd.FileName);
+            }
+        }
+
         /// <summary>
         /// [UI thread] : メニューのitemを動的に追加する。
         /// 商用版とフリーウェア版とでメニューが異なるのでここで動的に追加する必要がある。
@@ -81,28 +107,7 @@ namespace MyShogi.View.Win2D
                         shortcut.AddEvent1( e => { if (e.Modifiers == Keys.Control && e.KeyCode == Keys.O) { item.PerformClick(); e.Handled = true; } });
                         item.Click += (sender, e) =>
                         {
-                            using (var fd = new OpenFileDialog())
-                            {
-                                    // [ファイルの種類]に表示される選択肢を指定する
-                                    // 指定しないとすべてのファイルが表示される
-                                    fd.Filter = string.Join("|", new string[]
-                                    {
-                                "棋譜ファイル|*.kif;*.kifu;*.ki2;*.kif2;*.ki2u;*.kif2u;*.csa;*.psn;*.psn2;*.sfen;*.json;*.jkf;*.txt",
-                                "KIF形式|*.kif;*.kifu",
-                                "KIF2形式|*.ki2;*.kif2;*.ki2u;*.kif2u",
-                                "CSA形式|*.csa",
-                                "PSN形式|*.psn",
-                                "PSN2形式|*.psn2",
-                                "SFEN形式|*.sfen",
-                                "すべてのファイル|*.*",
-                                    });
-                                fd.FilterIndex = 1;
-                                fd.Title = "開く棋譜ファイルを選択してください";
-
-                                    // ダイアログを表示する
-                                    if (fd.ShowDialog() == DialogResult.OK)
-                                    ReadKifuFile(fd.FileName);
-                            }
+                            OpenKifuFile();
                         };
                         item_file.DropDownItems.Add(item);
                     }

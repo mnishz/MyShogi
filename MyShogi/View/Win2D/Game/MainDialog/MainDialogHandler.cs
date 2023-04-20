@@ -518,38 +518,37 @@ namespace MyShogi.View.Win2D
         private int kifuFileIndex = -1;
         private string kifuFolder = "";
 
-        private bool SelectKifuFolder()
+        private void SelectKifuFileAndFolder()
         {
-            using (var fd = new OpenFileDialog())
-            {
-                fd.FileName = "SelectFolder";
-                fd.Filter = "Folder|.";
-                fd.CheckFileExists = false;
-                fd.InitialDirectory = ".";
-                fd.Title = "棋譜ファイルが存在するフォルダを選択してください";
+            OpenKifuFile();
 
-                if (fd.ShowDialog() == DialogResult.OK)
-                {
-                    kifuFolder = System.IO.Path.GetDirectoryName(fd.FileName);
-                }
-                else
-                {
-                    return false;
-                }
+            var openedFile = ViewModel.LastFileName;
+
+            if (openedFile == null)
+            {
+                return;
             }
 
+            kifuFolder = System.IO.Path.GetDirectoryName(openedFile);
             kifuFiles = System.IO.Directory.GetFiles(kifuFolder, "*");
+
             if (shuffleCheckBox.Checked)
             {
                 kifuFiles = kifuFiles.OrderBy(i => Guid.NewGuid()).ToArray();
             }
-            kifuFileIndex = (kifuFiles.Length != 0) ? 0 : -1;
-            return true;
+
+            var index = Array.FindIndex(kifuFiles, s => s.Equals(openedFile));
+            if ((index >= 0) && (index < kifuFiles.Length))
+            {
+                kifuFileIndex = index;
+            }
+
+            this.toolStripTextBox.Text = System.IO.Path.GetFileName(openedFile);
         }
 
         private void toolStripButton17_Click(object sender, System.EventArgs e)
         {
-            SelectKifuFolder();
+            SelectKifuFileAndFolder();
         }
 
         private void toolStripButton14_Click(object sender, System.EventArgs e)
@@ -562,10 +561,8 @@ namespace MyShogi.View.Win2D
         {
             if ((kifuFiles == null) || (kifuFiles.Length == 0))
             {
-                if (!SelectKifuFolder())
-                {
-                    return;
-                }
+                SelectKifuFileAndFolder();
+                return;
             }
             else
             {
