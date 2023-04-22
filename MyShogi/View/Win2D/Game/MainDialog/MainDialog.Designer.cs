@@ -55,8 +55,9 @@
             this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.shuffleCheckBox = new System.Windows.Forms.CheckBox();
-            this.toolStripElapsedTimeText = new System.Windows.Forms.ToolStripTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +75,7 @@
             this.gameScreenControl1.Margin = new System.Windows.Forms.Padding(6);
             this.gameScreenControl1.Name = "gameScreenControl1";
             this.gameScreenControl1.Setting = null;
-            this.gameScreenControl1.Size = new System.Drawing.Size(518, 231);
+            this.gameScreenControl1.Size = new System.Drawing.Size(1070, 231);
             this.gameScreenControl1.TabIndex = 1;
             this.gameScreenControl1.TabStop = false;
             // 
@@ -105,11 +106,12 @@
             this.toolStripTextBox,
             this.toolStripButton15,
             this.toolStripButton16,
-            this.toolStripElapsedTimeText});
+            this.toolStripSeparator5,
+            this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.ShowItemToolTips = false;
-            this.toolStrip1.Size = new System.Drawing.Size(518, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1070, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -302,7 +304,7 @@
             this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton15.Name = "toolStripButton15";
-            this.toolStripButton15.Size = new System.Drawing.Size(23, 19);
+            this.toolStripButton15.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton15.Text = ">";
             this.toolStripButton15.ToolTipText = "次の問題に進む";
             this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
@@ -312,10 +314,21 @@
             this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton16.Name = "toolStripButton16";
-            this.toolStripButton16.Size = new System.Drawing.Size(23, 19);
+            this.toolStripButton16.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton16.Text = "応";
             this.toolStripButton16.ToolTipText = "棋譜の中から適当な応手を選んで指す";
             this.toolStripButton16.Click += new System.EventHandler(this.toolStripButton16_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(88, 22);
+            this.toolStripLabel1.Text = "経過時間: 00:00";
             // 
             // shuffleCheckBox
             // 
@@ -324,16 +337,6 @@
             this.shuffleCheckBox.Size = new System.Drawing.Size(70, 19);
             this.shuffleCheckBox.TabIndex = 0;
             this.shuffleCheckBox.Text = "シャッフル";
-            // 
-            // toolStripElapsedTimeText
-            // 
-            this.toolStripElapsedTimeText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripElapsedTimeText.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
-            this.toolStripElapsedTimeText.Name = "toolStripElapsedTimeText";
-            this.toolStripElapsedTimeText.Size = new System.Drawing.Size(100, 23);
-            this.toolStripElapsedTimeText.Text = "00:00";
-            this.toolStripElapsedTimeText.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolStripElapsedTimeText.ToolTipText = "経過時間";
             // 
             // button1
             // 
@@ -353,7 +356,7 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(518, 256);
+            this.ClientSize = new System.Drawing.Size(1070, 256);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gameScreenControl1);
             this.Controls.Add(this.toolStrip1);
@@ -401,10 +404,11 @@
         private System.Windows.Forms.ToolStripButton toolStripButton18;
         private System.Windows.Forms.ToolStripButton toolStripButton14;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox;
-        private System.Windows.Forms.ToolStripTextBox toolStripElapsedTimeText;
         private System.Windows.Forms.ToolStripButton toolStripButton15;
         private System.Windows.Forms.ToolStripButton toolStripButton16;
         private System.Windows.Forms.CheckBox shuffleCheckBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

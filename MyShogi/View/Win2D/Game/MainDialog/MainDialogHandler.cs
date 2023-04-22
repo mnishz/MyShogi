@@ -68,7 +68,7 @@ namespace MyShogi.View.Win2D
             engineConsiderationMainControl.OnIdle();
 
             var ts = stopWatch_.Elapsed;
-            toolStripElapsedTimeText.Text = $"{ts.Minutes:00}:{ts.Seconds:00}";
+            toolStripLabel1.Text = $"経過時間: {ts.Minutes:00}:{ts.Seconds:00}";
 
             // 持ち時間描画だけの部分更新
             // あとでちゃんと書き直す
