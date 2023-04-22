@@ -67,7 +67,7 @@ namespace MyShogi.Model.Shogi.LocalServer
         /// GameScreenControlの同名のメソッドを用いること。
         /// </summary>
         /// <param name="m"></param>
-        public void DoMoveCommand(Move m, TimerEnabler counterMoveTimerEnabler, Action OnCompleted = null)
+        public void DoMoveCommand(Move m, TimerEnabler counterMoveTimerEnabler, StopwatchStopper stopwatchStopper, Action OnCompleted = null)
         {
             // →　駒の移動が確定しても、DoMoveCommand()が受理されるまで新しい場所に駒が描画されないのに
             // StateReset()でDirtyになるから描画が先に行われることがあり、
@@ -129,6 +129,7 @@ namespace MyShogi.Model.Shogi.LocalServer
                         if (kifuManager.Tree.gamePly == kifuManager.Tree.KifuList.Count)
                         {
                             TheApp.app.SoundManager.Play(MyShogi.Model.Resource.Sounds.SoundEnum.SE_SEIKAI);
+                            stopwatchStopper?.Invoke();
                         }
 
                         // DoMoveに成功したので駒音を再生する。

@@ -67,6 +67,9 @@ namespace MyShogi.View.Win2D
             // 検討ウインドウはmessage dispatcherのために自前でOnIdle()を呼び出す必要があるる
             engineConsiderationMainControl.OnIdle();
 
+            var ts = stopWatch_.Elapsed;
+            toolStripElapsedTimeText.Text = $"{ts.Minutes:00}:{ts.Seconds:00}";
+
             // 持ち時間描画だけの部分更新
             // あとでちゃんと書き直す
             //if (gameScreen.DirtyRestTime)

@@ -62,6 +62,7 @@ namespace MyShogi.Model.Common.ObjectModel
     public delegate void PropertyChangedEventHandler(PropertyChangedEventArgs args);
 
     public delegate void TimerEnabler();
+    public delegate void StopwatchStopper();
 
     /// <summary>
     /// NotifyObjectで使う、あるプロパティ名に対応するデータ

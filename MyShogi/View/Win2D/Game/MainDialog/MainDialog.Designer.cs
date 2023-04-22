@@ -53,6 +53,7 @@
             this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripElapsedTimeText = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
             this.shuffleCheckBox = new System.Windows.Forms.CheckBox();
@@ -104,6 +105,7 @@
             this.toolStripButton15,
             this.toolStripButton16});
             this.toolStrip1.Items.Add(new System.Windows.Forms.ToolStripControlHost(this.shuffleCheckBox));
+            this.toolStrip1.Items.Add((this.toolStripElapsedTimeText));
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.ShowItemToolTips = false;
@@ -293,6 +295,14 @@
             this.toolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.toolStripTextBox.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             //
+            // toolStripElapsedTimeText
+            //
+            this.toolStripElapsedTimeText.Name = "toolStripElapsedTimeText";
+            this.toolStripElapsedTimeText.Text = "00:00";
+            this.toolStripElapsedTimeText.ToolTipText = "経過時間";
+            this.toolStripElapsedTimeText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripElapsedTimeText.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            //
             // toolStripButton15
             //
             this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -369,6 +379,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton18;
         private System.Windows.Forms.ToolStripButton toolStripButton14;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox;
+        private System.Windows.Forms.ToolStripTextBox toolStripElapsedTimeText;
         private System.Windows.Forms.ToolStripButton toolStripButton15;
         private System.Windows.Forms.ToolStripButton toolStripButton16;
         private System.Windows.Forms.CheckBox shuffleCheckBox;

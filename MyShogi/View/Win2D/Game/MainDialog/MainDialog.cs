@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using MyShogi.App;
 using MyShogi.Model.Common.ObjectModel;
@@ -78,7 +79,7 @@ namespace MyShogi.View.Win2D
                 UpdateMenuItems = UpdateMenuItems,
             };
             gameScreenControl1.Setting = setting;
-            gameScreenControl1.Init(EnableCounterMoveTimer);
+            gameScreenControl1.Init(EnableCounterMoveTimer, StopStopwatch);
 
             // エンジンの読み筋などを、検討ダイアログにリダイレクトする。
             gameScreenControl1.ThinkReportChanged = ThinkReportChanged;
@@ -104,6 +105,11 @@ namespace MyShogi.View.Win2D
         private void EnableCounterMoveTimer()
         {
             counterMoveTimer.Enabled = true;
+        }
+
+        private void StopStopwatch()
+        {
+            stopWatch_.Stop();
         }
 
         /// <summary>
@@ -161,6 +167,7 @@ namespace MyShogi.View.Win2D
 
                 // このファイルを用いたのでMRUFに記録しておく。
                 UseKifuFile(path);
+                stopWatch_.Restart();
             }
             catch
             {
@@ -168,6 +175,8 @@ namespace MyShogi.View.Win2D
                 throw;
             }
         }
+
+        private System.Diagnostics.Stopwatch stopWatch_ = new System.Diagnostics.Stopwatch();
 
         /// <summary>
         /// 棋譜ファイルを使った時に呼び出されるべきハンドラ。
