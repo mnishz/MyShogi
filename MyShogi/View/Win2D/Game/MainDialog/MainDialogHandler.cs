@@ -541,18 +541,22 @@ namespace MyShogi.View.Win2D
             kifuFolder = System.IO.Path.GetDirectoryName(file);
             kifuFiles = System.IO.Directory.GetFiles(kifuFolder, "*");
 
-            if (shuffleCheckBox.Checked)
+            if (!shuffleCheckBox.Checked)
+            {
+                var index = Array.FindIndex(kifuFiles, s => s.Equals(file));
+                if ((index >= 0) && (index < kifuFiles.Length))
+                {
+                    kifuFileIndex = index;
+                }
+                this.toolStripTextBox.Text = System.IO.Path.GetFileName(file);
+            }
+            else
             {
                 kifuFiles = kifuFiles.OrderBy(i => Guid.NewGuid()).ToArray();
+                kifuFileIndex = 0;
+                ReadKifuFile(kifuFiles[kifuFileIndex]);
+                this.toolStripTextBox.Text = System.IO.Path.GetFileName(kifuFiles[kifuFileIndex]);
             }
-
-            var index = Array.FindIndex(kifuFiles, s => s.Equals(file));
-            if ((index >= 0) && (index < kifuFiles.Length))
-            {
-                kifuFileIndex = index;
-            }
-
-            this.toolStripTextBox.Text = System.IO.Path.GetFileName(file);
         }
 
         private void toolStripButton17_Click(object sender, System.EventArgs e)
