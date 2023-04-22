@@ -138,6 +138,7 @@ namespace MyShogi.View.Win2D
         {
             SizeOrLocationChanged();
             ResizeConsiderationControl();
+            button1.Location = gameScreenControl1.Affine(new Point(1450, 200));
         }
 
         private void SizeOrLocationChanged()

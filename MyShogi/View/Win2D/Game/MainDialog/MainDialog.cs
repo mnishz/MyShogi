@@ -219,5 +219,9 @@ namespace MyShogi.View.Win2D
             gameScreenControl1.ForceRedraw();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GoToPrevNextProblem(true);
+        }
     }
 }

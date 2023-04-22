@@ -53,10 +53,11 @@
             this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripElapsedTimeText = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
             this.shuffleCheckBox = new System.Windows.Forms.CheckBox();
+            this.toolStripElapsedTimeText = new System.Windows.Forms.ToolStripTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,9 +104,8 @@
             this.toolStripButton14,
             this.toolStripTextBox,
             this.toolStripButton15,
-            this.toolStripButton16});
-            this.toolStrip1.Items.Add(new System.Windows.Forms.ToolStripControlHost(this.shuffleCheckBox));
-            this.toolStrip1.Items.Add((this.toolStripElapsedTimeText));
+            this.toolStripButton16,
+            this.toolStripElapsedTimeText});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.ShowItemToolTips = false;
@@ -251,14 +251,14 @@
             this.toolStripButton13.Text = "▶";
             this.toolStripButton13.ToolTipText = "末尾の局面に進めます。(検討時)";
             this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
-            //
+            // 
             // toolStripSeparator4
-            //
+            // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            //
+            // 
             // toolStripButton17
-            //
+            // 
             this.toolStripButton17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton17.Name = "toolStripButton17";
@@ -266,9 +266,9 @@
             this.toolStripButton17.Text = "選";
             this.toolStripButton17.ToolTipText = "最初の棋譜ファイルを選ぶ";
             this.toolStripButton17.Click += new System.EventHandler(this.toolStripButton17_Click);
-            //
+            // 
             // toolStripButton18
-            //
+            // 
             this.toolStripButton18.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton18.Name = "toolStripButton18";
@@ -276,9 +276,9 @@
             this.toolStripButton18.Text = "続";
             this.toolStripButton18.ToolTipText = "前回の最後のファイルから続ける";
             this.toolStripButton18.Click += new System.EventHandler(this.toolStripButton18_Click);
-            //
+            // 
             // toolStripButton14
-            //
+            // 
             this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton14.Name = "toolStripButton14";
@@ -286,46 +286,67 @@
             this.toolStripButton14.Text = "<";
             this.toolStripButton14.ToolTipText = "前の問題に戻る";
             this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton14_Click);
-            //
+            // 
             // toolStripTextBox
-            //
-            this.toolStripTextBox.Name = "toolStripTextBox";
-            this.toolStripTextBox.Text = "invalid";
-            this.toolStripTextBox.ToolTipText = "現在の問題番号";
+            // 
             this.toolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
+            this.toolStripTextBox.Name = "toolStripTextBox";
+            this.toolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.toolStripTextBox.Text = "invalid";
             this.toolStripTextBox.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //
-            // toolStripElapsedTimeText
-            //
-            this.toolStripElapsedTimeText.Name = "toolStripElapsedTimeText";
-            this.toolStripElapsedTimeText.Text = "00:00";
-            this.toolStripElapsedTimeText.ToolTipText = "経過時間";
-            this.toolStripElapsedTimeText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripElapsedTimeText.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //
+            this.toolStripTextBox.ToolTipText = "現在の問題番号";
+            // 
             // toolStripButton15
-            //
+            // 
             this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton15.Name = "toolStripButton15";
-            this.toolStripButton15.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton15.Size = new System.Drawing.Size(23, 19);
             this.toolStripButton15.Text = ">";
             this.toolStripButton15.ToolTipText = "次の問題に進む";
             this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
-            //
+            // 
             // toolStripButton16
-            //
+            // 
             this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton16.Name = "toolStripButton16";
-            this.toolStripButton16.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton16.Size = new System.Drawing.Size(23, 19);
             this.toolStripButton16.Text = "応";
             this.toolStripButton16.ToolTipText = "棋譜の中から適当な応手を選んで指す";
             this.toolStripButton16.Click += new System.EventHandler(this.toolStripButton16_Click);
-            //
+            // 
             // shuffleCheckBox
-            //
+            // 
+            this.shuffleCheckBox.Location = new System.Drawing.Point(1, 47);
+            this.shuffleCheckBox.Name = "shuffleCheckBox";
+            this.shuffleCheckBox.Size = new System.Drawing.Size(70, 19);
+            this.shuffleCheckBox.TabIndex = 0;
             this.shuffleCheckBox.Text = "シャッフル";
+            // 
+            // toolStripElapsedTimeText
+            // 
+            this.toolStripElapsedTimeText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripElapsedTimeText.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
+            this.toolStripElapsedTimeText.Name = "toolStripElapsedTimeText";
+            this.toolStripElapsedTimeText.Size = new System.Drawing.Size(100, 23);
+            this.toolStripElapsedTimeText.Text = "00:00";
+            this.toolStripElapsedTimeText.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolStripElapsedTimeText.ToolTipText = "経過時間";
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button1.Location = new System.Drawing.Point(49, 65);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10);
+            this.button1.Size = new System.Drawing.Size(137, 51);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "次の問題へ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainDialog
             // 
@@ -333,6 +354,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(518, 256);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gameScreenControl1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -383,5 +405,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton15;
         private System.Windows.Forms.ToolStripButton toolStripButton16;
         private System.Windows.Forms.CheckBox shuffleCheckBox;
+        private System.Windows.Forms.Button button1;
     }
 }

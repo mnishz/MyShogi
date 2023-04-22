@@ -19,7 +19,7 @@ namespace MyShogi.View.Win2D
         /// </summary>
         /// <param name="p"></param>
         /// <returns></returns>
-        private Point Affine(Point p)
+        public Point Affine(Point p)
         {
             return AffineMatrix.Affine(p);
         }
