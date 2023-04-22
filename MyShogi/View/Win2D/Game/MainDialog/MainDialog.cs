@@ -168,6 +168,7 @@ namespace MyShogi.View.Win2D
                 // このファイルを用いたのでMRUFに記録しておく。
                 UseKifuFile(path);
                 stopWatch_.Restart();
+                button1.Visible = false;
             }
             catch
             {

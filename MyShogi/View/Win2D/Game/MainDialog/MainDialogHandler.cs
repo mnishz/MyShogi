@@ -70,6 +70,11 @@ namespace MyShogi.View.Win2D
             var ts = stopWatch_.Elapsed;
             toolStripLabel1.Text = $"経過時間: {ts.Minutes:00}:{ts.Seconds:00}";
 
+            if (!button1.Visible && (kifuControl.ViewModel.KifuListSelectedIndex == kifuControl.ViewModel.KifuListCount - 1))
+            {
+                button1.Visible = true;
+            }
+
             // 持ち時間描画だけの部分更新
             // あとでちゃんと書き直す
             //if (gameScreen.DirtyRestTime)
