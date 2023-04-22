@@ -59,6 +59,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.shuffleCheckBox = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,6 +107,7 @@
             this.toolStripTextBox,
             this.toolStripButton15,
             this.toolStripButton16,
+            this.toolStripLabel2,
             this.toolStripSeparator5,
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -332,11 +334,14 @@
             // 
             // shuffleCheckBox
             // 
-            this.shuffleCheckBox.Location = new System.Drawing.Point(1, 47);
+            this.shuffleCheckBox.AutoSize = true;
+            this.shuffleCheckBox.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.shuffleCheckBox.Location = new System.Drawing.Point(704, 28);
             this.shuffleCheckBox.Name = "shuffleCheckBox";
-            this.shuffleCheckBox.Size = new System.Drawing.Size(70, 19);
+            this.shuffleCheckBox.Size = new System.Drawing.Size(88, 25);
             this.shuffleCheckBox.TabIndex = 0;
             this.shuffleCheckBox.Text = "シャッフル";
+            this.shuffleCheckBox.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -351,12 +356,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.AutoSize = false;
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(86, 22);
+            // 
             // MainDialog
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1070, 256);
+            this.Controls.Add(this.shuffleCheckBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gameScreenControl1);
             this.Controls.Add(this.toolStrip1);
@@ -410,5 +422,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }
