@@ -124,7 +124,10 @@ namespace MyShogi.Model.Shogi.LocalServer
                         }
 
                         // 指し手に対する応手を自動的に指すための timer を開始
-                        counterMoveTimerEnabler?.Invoke();
+                        if ((kifuManager.Tree.gamePly % 2) == 0)
+                        {
+                            counterMoveTimerEnabler?.Invoke();
+                        }
 
                         if (kifuManager.Tree.gamePly == kifuManager.Tree.KifuList.Count)
                         {
