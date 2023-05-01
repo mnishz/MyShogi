@@ -1019,16 +1019,18 @@ namespace MyShogi.Model.Shogi.Kifu
                 // この局面では何も出来ない。
 
             var node_existed = currentNode.moves.Exists((x) => x.nextMove == m);
+
+            if (!node_existed)
+            {
+                // 指し手が棋譜に存在しない (間違った手を指した)
+                return false;
+            }
+
             // 現在の棋譜上の指し手なので棋譜ウィンドウの更新は不要である。
             if (node_existed && kifuWindowMoves[pliesFromRoot].nextMove == m)
             {
                 DoMove(m);
                 return true;
-            }
-            else
-            {
-                // 指し手が棋譜に存在しない (間違った手を指した)
-                return false;
             }
 
             PropertyChangedEventEnable = false;
