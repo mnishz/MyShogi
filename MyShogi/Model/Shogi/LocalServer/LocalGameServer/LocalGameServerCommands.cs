@@ -119,7 +119,7 @@ namespace MyShogi.Model.Shogi.LocalServer
                         var misc = config.GameSetting.MiscSettings;
                         if (!kifuManager.Tree.DoMoveUI(m, misc))
                         {
-                            TheApp.app.MessageShow("指し手が間違っています。", MessageShowType.Error);
+                            TheApp.app.MessageShow("指し手が間違っています。", MessageShowType.Information);
                             return;
                         }
 
