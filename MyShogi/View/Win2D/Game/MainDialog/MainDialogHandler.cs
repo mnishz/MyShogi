@@ -592,8 +592,18 @@ namespace MyShogi.View.Win2D
             else
             {
                 kifuFileIndex = (isNext) ? kifuFileIndex + 1 : kifuFileIndex - 1;
-                if (kifuFileIndex < 0) kifuFileIndex = 0;
-                if (kifuFileIndex >= kifuFiles.Length) kifuFileIndex = kifuFiles.Length - 1;
+                if (kifuFileIndex < 0)
+                {
+                    TheApp.app.MessageShow("一番最初の問題です。", MessageShowType.Information);
+                    kifuFileIndex = 0;
+                    return;
+                }
+                if (kifuFileIndex >= kifuFiles.Length)
+                {
+                    TheApp.app.MessageShow("一番最後の問題です。", MessageShowType.Information);
+                    kifuFileIndex = kifuFiles.Length - 1;
+                    return;
+                }
             }
 
             try
